@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.younes.quiz_game.MainController">
+   <children>
+      <MFXButton fx:id="btnLevels" buttonType="RAISED" layoutX="487.0" layoutY="206.0" onAction="#change2Levels" prefHeight="89.0" prefWidth="144.0" rippleColor="#646ad0" text="المراحل" />
+      <MFXButton fx:id="btnSettings" buttonType="RAISED" layoutX="130.0" layoutY="206.0" onAction="#change2Settings" prefHeight="89.0" prefWidth="144.0" text="الإعدادات" />
+   </children>
+</AnchorPane>

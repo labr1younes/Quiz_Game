@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.younes.quiz_game.LevelsController">
+   <children>
+      <GridPane layoutY="50.0" prefHeight="450.0" prefWidth="750.0" style="-fx-background-color: red;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <MFXButton fx:id="btnlvl01" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 01" />
+            <MFXButton fx:id="btnlvl02" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 02" GridPane.columnIndex="1" />
+            <MFXButton fx:id="btnlvl07" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 07" layoutX="195.0" layoutY="29.0" GridPane.rowIndex="1" />
+            <MFXButton fx:id="btnlvl03" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 03" GridPane.columnIndex="2" />
+            <MFXButton fx:id="btnlvl04" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 04" GridPane.columnIndex="3" />
+            <MFXButton fx:id="btnlvl06" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 06" GridPane.columnIndex="5" />
+            <MFXButton fx:id="btnlvl08" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 08" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <MFXButton fx:id="btnlvl09" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 09" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <MFXButton fx:id="btnlvl10" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 10" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <MFXButton fx:id="btnlvl12" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 12" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <MFXButton fx:id="btnlvl13" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 13" GridPane.rowIndex="2" />
+            <MFXButton fx:id="btnlvl14" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 14" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <MFXButton fx:id="btnlvl15" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 15" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <MFXButton fx:id="btnlvl16" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 16" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <MFXButton fx:id="btnlvl18" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 18" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <MFXButton fx:id="btnlvl19" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 19" GridPane.rowIndex="3" />
+            <MFXButton fx:id="btnlvl20" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 20" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <MFXButton fx:id="btnlvl21" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 21" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <MFXButton fx:id="btnlvl22" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 22" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <MFXButton fx:id="btnlvl24" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 24" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <MFXButton fx:id="btnlvl25" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 25" GridPane.rowIndex="4" />
+            <MFXButton fx:id="btnlvl26" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 26" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <MFXButton fx:id="btnlvl27" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 27" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <MFXButton fx:id="btnlvl28" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 28" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <MFXButton fx:id="btnlvl30" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 30" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <MFXButton fx:id="btnlvl31" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 31" GridPane.rowIndex="5" />
+            <MFXButton fx:id="btnlvl32" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 32" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <MFXButton fx:id="btnlvl33" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 33" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <MFXButton fx:id="btnlvl34" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 34" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <MFXButton fx:id="btnlvl36" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 36" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <MFXButton fx:id="btnlvl05" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 05" GridPane.columnIndex="4" />
+            <MFXButton fx:id="btnlvl11" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 11" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <MFXButton fx:id="btnlvl17" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 17" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <MFXButton fx:id="btnlvl23" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 23" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <MFXButton fx:id="btnlvl29" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 29" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <MFXButton fx:id="btnlvl35" buttonType="RAISED" onAction="#openlevel" prefHeight="55.0" prefWidth="89.0" text="المرحلة 35" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <MFXButton fx:id="btnback" depthLevel="LEVEL4" layoutX="14.0" layoutY="6.0" onAction="#goback" prefHeight="34.0" prefWidth="55.0" rippleColor="#080879" text="رجوع" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="6.0" />
+   </children>
+</AnchorPane>
