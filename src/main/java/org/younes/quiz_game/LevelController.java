@@ -1,7 +1,6 @@
 package org.younes.quiz_game;
 
 import java.io.IOException;
-import java.net.URL;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -18,7 +17,11 @@ import javafx.stage.Stage;
 
 public class LevelController {
 
-
+    Level new_lvl_data  ;
+    private Stage stage ;
+    private Scene scene ; 
+    private AnchorPane root ;
+    
     @FXML
     private MFXButton btnback;
 
@@ -37,17 +40,19 @@ public class LevelController {
     @FXML
     void initialize() {
     	btnback.setRippleAnimateBackground(false);btncheck.setRippleAnimateBackground(false);
-    	
+
     }
     
     @FXML
     void checkanswer(ActionEvent event) {
-    	System.out.println(txtfieldanswer.getText());
+    	if (new_lvl_data.getSolution().equals(txtfieldanswer.getText())) {
+    		DBConnect.updateSolved(new_lvl_data.id);
+    		DBConnect.updateAttempts(new_lvl_data.id);
+    		System.out.println("Answer coorect ");
+    	} 
+    	else System.out.println("Wrong answer ");
     }
-
-    private Stage stage ;
-    private Scene scene ; 
-    private AnchorPane root ; 
+    
     
     @FXML
     void goback(ActionEvent event) throws IOException {

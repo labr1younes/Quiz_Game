@@ -1,7 +1,6 @@
 package org.younes.quiz_game;
 
 import java.io.IOException;
-import java.net.URL;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
@@ -163,7 +162,6 @@ public class LevelsController {
 	    	// and we do "encapcilation" to it 
 	    	Object node = event.getSource();
 	    	MFXButton b = (MFXButton)node;
-
 	    	
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Level.fxml"));
 	    	root = loader.load();
@@ -179,20 +177,14 @@ public class LevelsController {
 
 	    	Level new_lvl = DBConnect.getLevelData(lvlname);
 	    	
-
 	    	levelcontroller.changelbllevel(new_lvl.getLevelname());  	
-
 	    	levelcontroller.setimagelevel(new_lvl.getPhotodir());
-	    	
-	    	
-
+	    	levelcontroller.new_lvl_data = new_lvl ;
 	    	stage = (Stage)((Node)event.getSource()).getScene().getWindow() ;
 	    	scene = new Scene(root);
 	    	stage.setScene(scene);
 	    	stage.show();
 	    	
-
-	    	
-	    }
+	   	    }
 	    
 }

@@ -13,7 +13,6 @@ public class DBConnect {
             // create a connection to the database
             conn = DriverManager.getConnection(url);
            
-            
             System.out.println("Connection to SQLite has been established.");
             
         } catch (SQLException e) {
@@ -22,7 +21,7 @@ public class DBConnect {
         return conn ;
     }
 	
-	public static Level getLevelData(String level_number) {
+	public static Level getLevelData(String level_name) {
 		Level leveldata = new Level();
 		ResultSet rs = null;
 	    String select = "SELECT * from Levels WHERE levelName = ?";
@@ -31,7 +30,7 @@ public class DBConnect {
 		
 	    try {
 			st = c.prepareStatement(select);
-			st.setString(1, level_number);
+			st.setString(1, level_name);
 			rs = st.executeQuery();
 			
 			leveldata.setId(rs.getInt("id"));
@@ -43,15 +42,66 @@ public class DBConnect {
 			if (rs.getInt("solved")==0) { leveldata.setSolved(false); } else {leveldata.setSolved(true);}
 			
 			leveldata.setAttempts(rs.getInt("attempts"));
+			rs.close();
+			
+			st.close();
+			c.close();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-	    
+		}   
 
 		return leveldata ;
 	}
+	
+	public static void updateSolved(int level_id) {
+		
+		 String update = "UPDATE Levels SET solved = 1 WHERE id = ?";
+		 Connection c = connect() ;
+		 PreparedStatement st = null;
+		 
+		 try {
+			 st = c.prepareStatement(update);
+			 st.setInt(1, level_id);
+			 st.executeUpdate();
+			 System.out.println("\n ["+level_id+"]------------------------ updateSolved = 1");
+
+			 
+				
+				st.close();
+				c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+
+	}
+	
+	public static void updateAttempts(int level_id) {
+		
+		 String update = "UPDATE Levels SET attempts = attempts+1 WHERE id = ?";
+		 Connection c = connect() ;
+		 PreparedStatement st = null;
+		 
+		 try {
+			 st = c.prepareStatement(update);
+			 st.setInt(1, level_id);
+			 st.executeUpdate();
+			 System.out.println("\n ["+level_id +"]------------------------ updateAttempts +1");
+
+			 
+			st.close();
+			c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+	}
+	
 	
 	
 }
