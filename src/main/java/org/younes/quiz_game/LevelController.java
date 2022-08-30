@@ -1,6 +1,7 @@
 package org.younes.quiz_game;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -44,7 +45,7 @@ public class LevelController {
     }
     
     @FXML
-    void checkanswer(ActionEvent event) {
+    void checkanswer(ActionEvent event) throws SQLException {
     	if (new_lvl_data.getSolution().equals(txtfieldanswer.getText())) {
     		DBConnect.updateSolved(new_lvl_data.id);
     		DBConnect.updateAttempts(new_lvl_data.id);

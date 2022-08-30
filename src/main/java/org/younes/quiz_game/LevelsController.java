@@ -180,6 +180,7 @@ public class LevelsController {
 	    	levelcontroller.changelbllevel(new_lvl.getLevelname());  	
 	    	levelcontroller.setimagelevel(new_lvl.getPhotodir());
 	    	levelcontroller.new_lvl_data = new_lvl ;
+	    	
 	    	stage = (Stage)((Node)event.getSource()).getScene().getWindow() ;
 	    	scene = new Scene(root);
 	    	stage.setScene(scene);
