@@ -1,6 +1,7 @@
 package org.younes.quiz_game;
 import java.net.URL;
 import java.sql.*;
+import java.util.Arrays;
 
 import org.sqlite.SQLite;
 import org.sqlite.SQLiteDataSource;
@@ -26,6 +27,32 @@ public class DBConnect {
         return conn ;
          
     }
+	
+	public static boolean[] getLevelsolved() {
+		boolean[] arr = new boolean[36];
+	    String select = "SELECT solved from Levels ";
+	    Connection c = connect() ;
+		PreparedStatement st = null;
+		Arrays.fill(arr,true);
+		
+        try {
+			st = c.prepareStatement(select);
+			ResultSet rs = st.executeQuery();
+			
+			for (int i = 0 ; i <arr.length ; i++) {
+				if (rs.next()) {
+					if(rs.getInt("solved")==1) arr[i] = false ;
+				}
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return arr; 
+	}
 	
 	public static Level getLevelData(String level_name) {
 		Level leveldata = new Level();

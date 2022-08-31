@@ -128,20 +128,21 @@ public class LevelsController {
 	    private Stage stage ;
 	    private Scene scene ; 
 	    private AnchorPane root ;
-	    
+	    private boolean[] solvedarray ;
 	    
 	    @FXML
 	    void initialize() {
-    
-	    	btnlvl02.setDisable(true);btnlvl03.setDisable(true);btnlvl04.setDisable(true);
-			btnlvl05.setDisable(true);btnlvl06.setDisable(true);btnlvl07.setDisable(true);btnlvl08.setDisable(true);
-			btnlvl09.setDisable(true);btnlvl10.setDisable(true);btnlvl11.setDisable(true);btnlvl12.setDisable(true);
-			btnlvl13.setDisable(true);btnlvl14.setDisable(true);btnlvl15.setDisable(true);btnlvl16.setDisable(true);
-			btnlvl17.setDisable(true);btnlvl18.setDisable(true);btnlvl19.setDisable(true);btnlvl20.setDisable(true);
-			btnlvl21.setDisable(true);btnlvl22.setDisable(true);btnlvl23.setDisable(true);btnlvl24.setDisable(true);
-			btnlvl25.setDisable(true);btnlvl26.setDisable(true);btnlvl27.setDisable(true);btnlvl28.setDisable(true);
-			btnlvl29.setDisable(true);btnlvl30.setDisable(true);btnlvl31.setDisable(true);btnlvl32.setDisable(true);
-			btnlvl33.setDisable(true);btnlvl34.setDisable(true);btnlvl35.setDisable(true);btnlvl36.setDisable(true);
+	    	solvedarray = DBConnect.getLevelsolved();
+	    	
+	    	btnlvl02.setDisable(solvedarray[0]);btnlvl03.setDisable(solvedarray[1]);btnlvl04.setDisable(solvedarray[2]);
+			btnlvl05.setDisable(solvedarray[3]);btnlvl06.setDisable(solvedarray[4]);btnlvl07.setDisable(solvedarray[5]);btnlvl08.setDisable(solvedarray[6]);
+			btnlvl09.setDisable(solvedarray[7]);btnlvl10.setDisable(solvedarray[8]);btnlvl11.setDisable(solvedarray[9]);btnlvl12.setDisable(solvedarray[10]);
+			btnlvl13.setDisable(solvedarray[11]);btnlvl14.setDisable(solvedarray[12]);btnlvl15.setDisable(solvedarray[13]);btnlvl16.setDisable(solvedarray[14]);
+			btnlvl17.setDisable(solvedarray[15]);btnlvl18.setDisable(solvedarray[16]);btnlvl19.setDisable(solvedarray[17]);btnlvl20.setDisable(solvedarray[18]);
+			btnlvl21.setDisable(solvedarray[19]);btnlvl22.setDisable(solvedarray[20]);btnlvl23.setDisable(solvedarray[21]);btnlvl24.setDisable(solvedarray[22]);
+			btnlvl25.setDisable(solvedarray[23]);btnlvl26.setDisable(solvedarray[24]);btnlvl27.setDisable(solvedarray[25]);btnlvl28.setDisable(solvedarray[26]);
+			btnlvl29.setDisable(solvedarray[27]);btnlvl30.setDisable(solvedarray[28]);btnlvl31.setDisable(solvedarray[29]);btnlvl32.setDisable(solvedarray[30]);
+			btnlvl33.setDisable(solvedarray[31]);btnlvl34.setDisable(solvedarray[32]);btnlvl35.setDisable(solvedarray[33]);btnlvl36.setDisable(solvedarray[34]);
 
 	    }
 	    
