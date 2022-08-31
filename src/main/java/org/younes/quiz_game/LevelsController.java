@@ -124,24 +124,25 @@ public class LevelsController {
 	    
 	    @FXML
 	    private MFXButton btnback ;
-	    
-	    
+	      
 	    private Stage stage ;
 	    private Scene scene ; 
-	    private AnchorPane root ; 
+	    private AnchorPane root ;
+	    
 	    
 	    @FXML
 	    void initialize() {
-	    	btnback.setRippleAnimateBackground(false);
-	    	btnlvl01.setRippleAnimateBackground(false);btnlvl02.setRippleAnimateBackground(false);btnlvl03.setRippleAnimateBackground(false);btnlvl04.setRippleAnimateBackground(false);
-			btnlvl05.setRippleAnimateBackground(false);btnlvl06.setRippleAnimateBackground(false);btnlvl07.setRippleAnimateBackground(false);btnlvl08.setRippleAnimateBackground(false);
-			btnlvl09.setRippleAnimateBackground(false);btnlvl10.setRippleAnimateBackground(false);btnlvl11.setRippleAnimateBackground(false);btnlvl12.setRippleAnimateBackground(false);
-			btnlvl13.setRippleAnimateBackground(false);btnlvl14.setRippleAnimateBackground(false);btnlvl15.setRippleAnimateBackground(false);btnlvl16.setRippleAnimateBackground(false);
-			btnlvl17.setRippleAnimateBackground(false);btnlvl18.setRippleAnimateBackground(false);btnlvl19.setRippleAnimateBackground(false);btnlvl20.setRippleAnimateBackground(false);
-			btnlvl21.setRippleAnimateBackground(false);btnlvl22.setRippleAnimateBackground(false);btnlvl23.setRippleAnimateBackground(false);btnlvl24.setRippleAnimateBackground(false);
-			btnlvl25.setRippleAnimateBackground(false);btnlvl26.setRippleAnimateBackground(false);btnlvl27.setRippleAnimateBackground(false);btnlvl28.setRippleAnimateBackground(false);
-			btnlvl29.setRippleAnimateBackground(false);btnlvl30.setRippleAnimateBackground(false);btnlvl31.setRippleAnimateBackground(false);btnlvl32.setRippleAnimateBackground(false);
-			btnlvl33.setRippleAnimateBackground(false);btnlvl34.setRippleAnimateBackground(false);btnlvl35.setRippleAnimateBackground(false);btnlvl36.setRippleAnimateBackground(false);
+    
+	    	btnlvl02.setDisable(true);btnlvl03.setDisable(true);btnlvl04.setDisable(true);
+			btnlvl05.setDisable(true);btnlvl06.setDisable(true);btnlvl07.setDisable(true);btnlvl08.setDisable(true);
+			btnlvl09.setDisable(true);btnlvl10.setDisable(true);btnlvl11.setDisable(true);btnlvl12.setDisable(true);
+			btnlvl13.setDisable(true);btnlvl14.setDisable(true);btnlvl15.setDisable(true);btnlvl16.setDisable(true);
+			btnlvl17.setDisable(true);btnlvl18.setDisable(true);btnlvl19.setDisable(true);btnlvl20.setDisable(true);
+			btnlvl21.setDisable(true);btnlvl22.setDisable(true);btnlvl23.setDisable(true);btnlvl24.setDisable(true);
+			btnlvl25.setDisable(true);btnlvl26.setDisable(true);btnlvl27.setDisable(true);btnlvl28.setDisable(true);
+			btnlvl29.setDisable(true);btnlvl30.setDisable(true);btnlvl31.setDisable(true);btnlvl32.setDisable(true);
+			btnlvl33.setDisable(true);btnlvl34.setDisable(true);btnlvl35.setDisable(true);btnlvl36.setDisable(true);
+
 	    }
 	    
 	    @FXML
@@ -159,7 +160,7 @@ public class LevelsController {
 	    @FXML
 	    void openlevel(ActionEvent event) throws IOException {
 	    	// we get the node that was clicked 
-	    	// and we do "encapcilation" to it 
+	    	// and we do casting to it 
 	    	Object node = event.getSource();
 	    	MFXButton b = (MFXButton)node;
 	    	

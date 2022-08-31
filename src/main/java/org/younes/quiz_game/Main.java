@@ -20,8 +20,7 @@ public class Main extends Application  {
 			primaryStage.setTitle("Quiz Game");
 			primaryStage.setResizable(false);
 			
-//			DBConnect cnt = new DBConnect();
-//			cnt.connect();
+			DBConnect.printDatabase();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

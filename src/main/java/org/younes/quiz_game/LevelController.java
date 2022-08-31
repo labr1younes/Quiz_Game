@@ -46,9 +46,9 @@ public class LevelController {
     
     @FXML
     void checkanswer(ActionEvent event) throws SQLException {
+    	DBConnect.updateAttempts(new_lvl_data.id);
     	if (new_lvl_data.getSolution().equals(txtfieldanswer.getText())) {
     		DBConnect.updateSolved(new_lvl_data.id);
-    		DBConnect.updateAttempts(new_lvl_data.id);
     		System.out.println("Answer coorect ");
     	} 
     	else System.out.println("Wrong answer ");
