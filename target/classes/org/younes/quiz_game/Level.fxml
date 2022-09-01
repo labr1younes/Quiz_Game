@@ -20,6 +20,6 @@
          </children>
       </AnchorPane>
       <MFXButton fx:id="btnback" buttonType="RAISED" layoutX="14.0" layoutY="14.0" onAction="#goback" prefHeight="34.0" prefWidth="55.0" rippleColor="#080879" text="رجوع" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
-      <Label fx:id="lbllevel" alignment="CENTER" layoutX="348.0" layoutY="6.0" prefHeight="34.0" prefWidth="55.0" text="المستوى" />
+      <Label fx:id="lbllevel" alignment="CENTER" layoutX="348.0" layoutY="6.0" prefHeight="34.0" prefWidth="60.0" text="المستوى" />
    </children>
 </AnchorPane>

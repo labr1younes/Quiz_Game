@@ -8,8 +8,12 @@ import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,9 +53,24 @@ public class LevelController {
     	DBConnect.updateAttempts(new_lvl_data.id);
     	if (new_lvl_data.getSolution().equals(txtfieldanswer.getText())) {
     		DBConnect.updateSolved(new_lvl_data.id);
-    		System.out.println("Answer coorect ");
+    		
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("إجابة صحيحة");
+    		alert.setHeaderText(null);;
+    		alert.getDialogPane().setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+    		
+    		alert.setContentText("احسنت احسنت اجابة صحيحة");
+    		
+    		if ((alert.showAndWait().get() == ButtonType.OK ))
+				try {
+					goback(event) ;
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+    		
     	} 
-    	else System.out.println("Wrong answer ");
+    	else txtfieldanswer.clear();
     }
     
     
@@ -68,7 +87,7 @@ public class LevelController {
     
     public void changelbllevel(String name) {
     	
-    	lbllevel.setText(name);
+    	lbllevel.setText("المستوى " + name.substring(3));
     	
     }
     
