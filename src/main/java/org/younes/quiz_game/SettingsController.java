@@ -1,5 +1,8 @@
 package org.younes.quiz_game;
 import java.io.IOException;
+import java.sql.SQLException;
+
+import org.sqlite.core.DB;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 
@@ -17,6 +20,9 @@ public class SettingsController {
 	@FXML
     private MFXButton btnback;
 	
+	 @FXML
+	 private MFXButton btnreset;
+
 
     @FXML
     void initialize() {
@@ -37,6 +43,12 @@ public class SettingsController {
     	stage.setScene(scene);
     	stage.show();
     	System.out.println("go back to main ");
+    	
+    }
+    
+    @FXML
+    void resetdata(ActionEvent event) throws SQLException {
+    	DBConnect.resetInitial();
     	
     }
     

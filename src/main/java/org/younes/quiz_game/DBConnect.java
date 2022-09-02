@@ -3,9 +3,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.Arrays;
 
-import org.sqlite.SQLite;
-import org.sqlite.SQLiteDataSource;
- 
+
 public class DBConnect {
 	 
 	public static Connection connect() {
@@ -155,6 +153,20 @@ public class DBConnect {
 	
 	
 }
-	
+
+	public static void resetInitial() throws SQLException{
+		Connection c = connect();
+		PreparedStatement st = null;
+		String sql = "UPDATE Levels SET solved = 0 , attempts = 0";
+        
+        
+		st = c.prepareStatement(sql);
+		st.executeUpdate();
+
+        st.close();
+	    c.close();
+		
+		
+	}
 
 }
