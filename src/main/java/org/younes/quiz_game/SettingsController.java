@@ -2,8 +2,6 @@ package org.younes.quiz_game;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import org.sqlite.core.DB;
-
 import io.github.palexdev.materialfx.controls.MFXButton;
 
 import javafx.event.ActionEvent;
@@ -13,21 +11,36 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Label;
 
 public class SettingsController {
 
 	@FXML
     private MFXButton btnback;
 	
-	 @FXML
-	 private MFXButton btnreset;
+	@FXML
+	private MFXButton btnreset;
 
+	@FXML
+    private Label lblattemps;
 
+	@FXML
+	private Label lbloneattemp;
+
+	@FXML
+	private Label lblrestattemp;
+
+	@FXML
+	private Label lblsolvedlevels;
+
+	@FXML
+	private Label lbltwoattemps;
+ 
+	 
     @FXML
     void initialize() {
     	btnback.setRippleAnimateBackground(false);
-
+    	settinStatic();
     }
 
     private Stage stage ;
@@ -49,7 +62,17 @@ public class SettingsController {
     @FXML
     void resetdata(ActionEvent event) throws SQLException {
     	DBConnect.resetInitial();
+    	settinStatic();
+    }
+    
+    void settinStatic() {
+    	int[] arr = DBConnect.getStatic();
     	
+    	lblsolvedlevels.setText("36/"+arr[0]);
+    	lbloneattemp.setText(""+arr[1]);
+    	lbltwoattemps.setText(""+arr[2]);
+    	lblrestattemp.setText(""+arr[3]);
+    	lblattemps.setText(""+arr[4]);
     }
     
 }

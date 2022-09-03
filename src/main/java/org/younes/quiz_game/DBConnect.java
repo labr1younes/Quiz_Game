@@ -85,88 +85,151 @@ public class DBConnect {
 		return leveldata ;
 	}
 	
-	public static void updateSolved(int level_id) throws SQLException {
+	public static void updateSolved(int level_id) {
 		
 		 String update = "UPDATE Levels SET solved = 1 WHERE id = ?";
 		 Connection c = connect() ;
 		 PreparedStatement st = null;
 
 		 
-			 st = c.prepareStatement(update);
-			 st.setInt(1, level_id);
-			 st.executeUpdate();
-			 System.out.println("\n ["+level_id+"]------------------------ updateSolved = 1");
-			 
-			 st.close();
-		     c.close();;
+			 try {
+				st = c.prepareStatement(update);
+				 st.setInt(1, level_id);
+				 st.executeUpdate();
+				 System.out.println("\n ["+level_id+"]------------------------ updateSolved = 1");
+				 
+				 st.close();
+				 c.close();;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		     
 	}
 	
-	public static void updateAttempts(int level_id) throws SQLException {
+	public static void updateAttempts(int level_id) {
 		
 		 String update = "UPDATE Levels SET attempts = attempts+1 WHERE id = ?";
 		 Connection c = connect() ;
 		 PreparedStatement st = null;
 		  
 
-			 st = c.prepareStatement(update);
-			 st.setInt(1, level_id);
-			 st.executeUpdate();
-			 System.out.println("\n ["+level_id +"]------------------------ updateAttempts +1");
+			 try {
+				st = c.prepareStatement(update);
+				 st.setInt(1, level_id);
+				 st.executeUpdate();
+				 System.out.println("\n ["+level_id +"]------------------------ updateAttempts +1");
 
-			 
-			 printDatabase();
-			    st.close();
-		        c.close();
+				 
+				 printDatabase();
+				    st.close();
+				    c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 	
-	public static void printDatabase() throws SQLException {
+	public static void printDatabase() {
 		Connection c = connect() ;
 		PreparedStatement st = null;
 		
         System.out.println("\n ===============================-- ");
-        st = c.prepareStatement("SELECT * FROM Levels;");
-		ResultSet rs = st.executeQuery();
-	    
-	      while ( rs.next() ) {
-	         int id = rs.getInt("id");
-	         String  levelName = rs.getString("levelName");
-	         String photoDir  = rs.getString("photoDir");
-	         String  solution = rs.getString("solution");
-	         int solved = rs.getInt("solved");
-	         int attempts = rs.getInt("attempts");
-	         
-	         System.out.println( "id        = " + id );
-	         System.out.println( "levelName = " + levelName );
-	         System.out.println( "photoDir  = " + photoDir );
-	         System.out.println( "solution  = " + solution );
-	         System.out.println( "solved    = " + solved );
-	         System.out.println( "attempts  = " + attempts );
-	         System.out.println();
-	      }
-	      
-	     System.out.println("\n =============================== ");
+        try {
+			st = c.prepareStatement("SELECT * FROM Levels;");
+			ResultSet rs = st.executeQuery();
+			
+			  while ( rs.next() ) {
+			     int id = rs.getInt("id");
+			     String  levelName = rs.getString("levelName");
+			     String photoDir  = rs.getString("photoDir");
+			     String  solution = rs.getString("solution");
+			     int solved = rs.getInt("solved");
+			     int attempts = rs.getInt("attempts");
+			     
+			     System.out.println( "id        = " + id );
+			     System.out.println( "levelName = " + levelName );
+			     System.out.println( "photoDir  = " + photoDir );
+			     System.out.println( "solution  = " + solution );
+			     System.out.println( "solved    = " + solved );
+			     System.out.println( "attempts  = " + attempts );
+			     System.out.println();
+			  }
+			  
+			 System.out.println("\n =============================== ");
 
-	      rs.close();
-	      st.close();
-	      c.close();
+			  rs.close();
+			  st.close();
+			  c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
 	
 }
 
-	public static void resetInitial() throws SQLException{
+	public static void resetInitial() {
 		Connection c = connect();
 		PreparedStatement st = null;
 		String sql = "UPDATE Levels SET solved = 0 , attempts = 0";
-        
-        
-		st = c.prepareStatement(sql);
-		st.executeUpdate();
 
-        st.close();
-	    c.close();
+
+		try {
+			st = c.prepareStatement(sql);
+			st.executeUpdate();
+
+			st.close();
+			c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
 
+	public static int[] getStatic(){
+		
+		Connection c = connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		int[] resarray = new int[5];
+		String sql0 = "SELECT count(solved) as res FROM Levels WHERE solved=1" ;
+		String sql1 = "SELECT count(attempts) as res FROM Levels WHERE attempts=1";
+		String sql2 = "SELECT count(attempts) as res FROM Levels WHERE attempts=2";
+		String sql3 = "SELECT count(attempts) as res FROM Levels WHERE attempts>=3";
+		String sql4 = "SELECT sum(attempts) as res FROM Levels";
+		
+		try {
+			st = c.prepareStatement(sql0);
+			rs = st.executeQuery();
+			resarray[0] = rs.getInt("res"); 
+			
+			st = c.prepareStatement(sql1);
+			rs = st.executeQuery();
+			resarray[1] = rs.getInt("res"); 
+			
+			st = c.prepareStatement(sql2);
+			rs = st.executeQuery();
+			resarray[2] = rs.getInt("res"); 
+			
+			st = c.prepareStatement(sql3);
+			rs = st.executeQuery();
+			resarray[3] = rs.getInt("res"); 
+			
+			st = c.prepareStatement(sql4);
+			rs = st.executeQuery();
+			resarray[4] = rs.getInt("res"); 
+			
+			st.close();
+			rs.close();
+			c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+		return resarray;
+	}
 }
